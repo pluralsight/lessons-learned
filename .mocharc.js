@@ -1,5 +1,5 @@
 module.exports = {
-  "bail":true,
+  "bail":false,
   "verbose": true,
   "reporter": "spec",
   "spec":[
