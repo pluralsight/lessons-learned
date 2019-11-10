@@ -20,7 +20,7 @@
     "postbuild": "",
     "test": "mocha ",
     "test:cov": "nyc mocha ",
-    "test:fun": "npm --silent run test -- -- -g FUNDAMENTAL",
+    "test:fund": "npm --silent run test -- -- -g FUNDAMENTAL",
     "test:adv": "npm run test -- -- -g ADVANCED"
   },
   "repository": {
