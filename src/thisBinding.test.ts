@@ -13,7 +13,7 @@ class BindingTest {
 }
 
 describe(`ADVANCED: Binding of "this" can be trip you up in a class`, () => {
-  it(`Link to this test: src/thisBinding.test.ts:15)`, () => {})
+  it(`Link to this test: src/thisBinding.test.ts:15 ←🐞`, () => {})
   let uut: BindingTest
   let funcsToRun :Func[]
 

@@ -11,7 +11,7 @@ class MyClass {
 }
 
 describe(`ADVANCED: Arrow function expressions are hard to stub`, () => {
-  it(`Link to this test: src/testingLambdas.test.ts:8)`, () => {})
+  it(`Link to this test: src/testingLambdas.test.ts:8 ←🐞`, () => {})
   let uut : MyClass
   beforeEach(() => {
     uut = new MyClass()
