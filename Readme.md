@@ -7,7 +7,7 @@
 1. `npm run test:fund` to run only the fundamental tests
 1. `npm run test:adv` to run only the advanced tests
 1. Read the results
-1. If you see test results that look interesting look for a top level test "Link to this test:" and click the link to examine the code
+1. If you see test results that look interesting look for a top level test `Link to this test: <some link here> <-🐞` and click the link to examine the code
 
 ## Contribute lessons learned
 
