@@ -1,16 +1,15 @@
-# Lessons Learned Using Typescript in Node
+# Lessons Learned Using Typescript in Node 10.x
 
-## Learning Lessons from Others
+## Basic Usage
 
 1. Clone the repo
 1. `npm test` to run all the tests
 1. `npm run test:fund` to run only the fundamental tests
 1. `npm run test:adv` to run only the advanced tests
 1. Read the results
-1. If you see test results that look interesting look for a top level test "Link to this test:" and click the link
-1. Analyze and modify as needed for complete understanding
+1. If you see test results that look interesting look for a top level test "Link to this test:" and click the link to examine the code
 
-## Contribute your own lessons learned
+## Contribute lessons learned
 
 ### Coding Guidelines
 
@@ -22,3 +21,7 @@
 1. Write in TypeScript. If you have an idea for a lesson learned, but it only applies to JavaScript, it doesn't belong here. (This one is kind of a rule.)
 1. Also optionally, under your first `describe` add an `it('Link to this test: src/advanced/nameOfTest.test.ts:15)', () => {})` where `nameOfTest` and `15` are replaced with your file name and line number of the top level describe.
 1. Don't leave console.log or other terminal output in your code.
+
+## Editorial (or lack thereof)
+
+The intent of this repository was to capture lessons and techniques. The fact that a technique is here is not meant to encourage nor discourage the use of a particular technique. It is expected that some techniques shown here will be, or are already, replaced by newer language features. Since not all environments support the latest language features it is not envisioned that older techniques will be pruned.
