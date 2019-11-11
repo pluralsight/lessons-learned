@@ -10,7 +10,7 @@ const add5 = (x: number): number => x + 5
 const multiplyBy3 = (x: number): number => x * 3
 
 describe(`ADVANCED: We can Compose (right to left) and Pipe (left to right) functions together`, () => {
-  it(`Link to this test: src/functionalTechniques.test.ts:5 ←`, () => { })
+  it(`Link to this test: src/functionalTechniques.test.ts:5 ←🐞`, () => { })
 
   it(`compose() will execute the functions in right to left order`, () => {
     const result = compose(
