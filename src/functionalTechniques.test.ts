@@ -2,10 +2,10 @@
 import * as chai from 'chai'
 chai.should()
 
-type SomeFunc = (fn: any) => any
-const compose = (...args: SomeFunc[]) => (value: any) =>
-  args.reduceRight((acc: SomeFunc, fn: SomeFunc) => fn(acc), value)
-const pipe = (...args: SomeFunc[]) => (value: any) => args.reduce((acc: SomeFunc, fn: SomeFunc) => fn(acc), value)
+type Func = (fn: any) => any
+const compose = (...args: Func[]) => (value: any) =>
+  args.reduceRight((acc: Func, fn: Func) => fn(acc), value)
+const pipe = (...args: Func[]) => (value: any) => args.reduce((acc: Func, fn: Func) => fn(acc), value)
 const add5 = (x: number): number => x + 5
 const multiplyBy3 = (x: number): number => x * 3
 
