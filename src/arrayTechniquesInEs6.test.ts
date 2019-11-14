@@ -44,9 +44,22 @@ describe(`ADVANCED: Array Manipulation Techniques (some use ES6)`, () => {
     extractCols.should.eql([[`a1`, `a2`, `a3`], [`c1`, `c2`, undefined]])
   })
 
+  it.only(`remove empty rows while ignoring a specific column`, () => {
+    const sourceData = [[``, ``, ``, `FALSE`, ``], [``, ``, ``, `FALSE`, `b`], [`c`, ``, ``, `FALSE`, ``]]
+    const deepCopy = sourceData.map((inner) => inner.slice())
+    deepCopy.map((e) => {
+      e.splice(3, 1)
+      return e
+    })
+    const test = sourceData.filter((_, index) => deepCopy[index].reduce((el, val) => el + val).length > 0)
+    test.should.eql([[``, ``, ``, `FALSE`, `b`], [`c`, ``, ``, `FALSE`, ``]])
+  })
+
   describe(`Treat Arrays In a Functional manner`, () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     type SomeFunc = (fn: any) => any
     it(`Compose flatten and filter `, () => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const compose = (...args: SomeFunc[]) => (value: any) =>
         args.reduceRight((acc: SomeFunc, fn: SomeFunc) => fn(acc), value)
       const flatten = (array2D: string[][]) => array2D.reduce((flat, arr) => [...flat, ...arr])
