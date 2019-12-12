@@ -31,28 +31,45 @@ describe(`ADVANCED: Array Manipulation Techniques (some use ES6)`, () => {
   })
 
   it(`extract Specified Columns from 2D array`, () => {
-    const sourceData = [[`a1`, `b1`, `c1`], [`a2`, `b2`, `c2`], [`a3`, `b3`, `c3`]]
+    const sourceData = [
+      [`a1`, `b1`, `c1`],
+      [`a2`, `b2`, `c2`],
+      [`a3`, `b3`, `c3`],
+    ]
     const columnsToExtract = [0, 2]
     const extractCols = columnsToExtract.map((e) => sourceData.map((row) => row[e]))
-    extractCols.should.eql([[`a1`, `a2`, `a3`], [`c1`, `c2`, `c3`]])
+    extractCols.should.eql([
+      [`a1`, `a2`, `a3`],
+      [`c1`, `c2`, `c3`],
+    ])
   })
 
   it(`extract Specified Columns from sparsely populated 2D array`, () => {
     const sourceData = [[`a1`, `b1`, `c1`], [`a2`, `b2`, `c2`], [`a3`]]
     const columnsToExtract = [0, 2]
     const extractCols = columnsToExtract.map((e) => sourceData.map((row) => row[e]))
-    extractCols.should.eql([[`a1`, `a2`, `a3`], [`c1`, `c2`, undefined]])
+    extractCols.should.eql([
+      [`a1`, `a2`, `a3`],
+      [`c1`, `c2`, undefined],
+    ])
   })
 
-  it.only(`remove empty rows while ignoring a specific column`, () => {
-    const sourceData = [[``, ``, ``, `FALSE`, ``], [``, ``, ``, `FALSE`, `b`], [`c`, ``, ``, `FALSE`, ``]]
+  it(`remove empty rows while ignoring a specific column`, () => {
+    const sourceData = [
+      [``, ``, ``, `FALSE`, ``],
+      [``, ``, ``, `FALSE`, `b`],
+      [`c`, ``, ``, `FALSE`, ``],
+    ]
     const deepCopy = sourceData.map((inner) => inner.slice())
     deepCopy.map((e) => {
       e.splice(3, 1)
       return e
     })
     const test = sourceData.filter((_, index) => deepCopy[index].reduce((el, val) => el + val).length > 0)
-    test.should.eql([[``, ``, ``, `FALSE`, `b`], [`c`, ``, ``, `FALSE`, ``]])
+    test.should.eql([
+      [``, ``, ``, `FALSE`, `b`],
+      [`c`, ``, ``, `FALSE`, ``],
+    ])
   })
 
   describe(`Treat Arrays In a Functional manner`, () => {
@@ -66,10 +83,7 @@ describe(`ADVANCED: Array Manipulation Techniques (some use ES6)`, () => {
       const referenceArray = [`A`, `B`]
       const filter = (source: string[]) => source.filter((e) => !referenceArray.includes(e))
       const testArray2D = [[`A`], [`B`], [`C`]]
-      const result = compose(
-        filter,
-        flatten
-      )(testArray2D)
+      const result = compose(filter, flatten)(testArray2D)
       result.should.eql([`C`])
     })
 

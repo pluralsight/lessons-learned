@@ -2,7 +2,7 @@
 import * as chai from 'chai'
 const should = chai.should()
 
-describe.only(`Boolean parsing Using JSON.parse() should`, () => {
+describe(`Boolean parsing Using JSON.parse() should`, () => {
   it(`return true for "true" `, () => {
     JSON.parse(`true`).should.be.true
   })
